@@ -35,6 +35,8 @@ async def start(ctx):
     bible time ezekiel boy
     ~formula for the greatest lego oc ever''')
 
+#commands list 
+
 @bot.command(name = 'nigga')
 async def nigga(ctx):
     await ctx.channel.send('fuck bitches get money nigga cat nigga cat')
@@ -48,15 +50,24 @@ async def bruh(ctx):
         j=1
         while j<=10:
             if(j<=5):
-                s=s1+j*3*' '+s2
+                s=s1+j*5*' '+s2
             else:
-                s=s1+(10-j)*3*' '+s2
+                s=s1+(10-j)*5*' '+s2
             await ctx.channel.send(s)
             j+=1
         i+=1
 
+@bot.command(name = 'madarchod')
+async def madarchod(ctx):
+    await ctx.channel.send('mai madarchod hoon jo isme aaya')
 
-
+@bot.event
+async def on_message(ctx):
+    if ctx.author == bot.user:
+        return
+    else:
+        await ctx.channel.send(ctx.content)
+        
 @bot.event
 async def on_ready():
     print('logged in as '+(str(bot.user)))
