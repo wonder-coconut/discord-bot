@@ -43,40 +43,34 @@ async def nigga(ctx):
 
 @bot.command(name = 'bruh')
 async def bruh(ctx):
-    s1='bruh'
-    s2='moment'
-    i=1
-    while i<=2:
-        j=1
-        while j<=10:
-            if(j<=5):
-                s=s1+j*5*' '+s2
-            else:
-                s=s1+(10-j)*5*' '+s2
-            await ctx.channel.send(s)
-            j+=1
-        i+=1
+    BRUH=open('/home/wondercoconut/python3/botshit/bruh.txt','r')
+    while(True):
+        try:
+            await ctx.channel.send(BRUH.read())
+        except:
+            break
+
 
 @bot.command(name = 'madarchod')
 async def madarchod(ctx):
     await ctx.channel.send('mai madarchod hoon jo isme aaya')
 
-@bot.event
-async def on_message(ctx):
-    if ctx.author == bot.user:
-        return
-    else:
-        word=ctx.content
-        word=word.split()
-        await ctx.channel.send(word[0])
-        i=0
-        #while(True):
-        #    try:
-        #        s=word[i].lower()
-        #        if(s=='idiot'):
-        #            await ctx.channel.send('idiot')
-        #    except:
-        #        break
+#@bot.event
+#async def on_message(ctx):
+#    if ctx.author == bot.user:
+#        return
+#    else:
+#        word=ctx.content
+#        word=word.split()
+        #await ctx.channel.send(word[0])
+#        i=0
+#        while(True):
+#            try:
+#                s=word[i].lower()
+#                if(s=='idiot'):
+#                    await ctx.channel.send('idiot')
+#            except:
+#                break
 
 
 @bot.event
@@ -84,3 +78,4 @@ async def on_ready():
     print('logged in as '+(str(bot.user)))
 
 bot.run(getToken())
+
