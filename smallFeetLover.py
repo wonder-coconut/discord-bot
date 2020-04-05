@@ -66,8 +66,19 @@ async def on_message(ctx):
     if ctx.author == bot.user:
         return
     else:
-        await ctx.channel.send(ctx.content)
-        
+        word=ctx.content
+        word=word.split()
+        await ctx.channel.send(word[0])
+        i=0
+        #while(True):
+        #    try:
+        #        s=word[i].lower()
+        #        if(s=='idiot'):
+        #            await ctx.channel.send('idiot')
+        #    except:
+        #        break
+
+
 @bot.event
 async def on_ready():
     print('logged in as '+(str(bot.user)))
