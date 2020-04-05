@@ -12,20 +12,18 @@ def getToken():
 
 @bot.command(name = 'start')
 async def test(ctx):
-    await ctx.channel.send('type in ~getwoke')
+    await ctx.channel.send('type in ~getwoke to get started')
 
 @bot.command(name = 'getwoke')
 async def start(ctx):
-    await ctx.channel.send('''press F to pay respects
+    await ctx.channel.send('''
+    press F to pay respects
     ~getwoke for this message
     ~nigga for cute poetry aka BARS
     ~bruh for surprise
     ~madarchod for haha very nice desi meme
-    ~caps <text>
     say the word \"idiot\" for a strongly worded copypasta
-    ~gay for the gayest picture you can ever find
     ~bop for a bop
-    ~wonder for a retarded fuck portrait
     pigeon for something
     be horny
     ~engage to remove the big guns
@@ -34,7 +32,30 @@ async def start(ctx):
     muda
     ask him what bear is best
     what what what what
-    bible time ezekiel boy''')
+    bible time ezekiel boy
+    ~formula for the greatest lego oc ever''')
+
+@bot.command(name = 'nigga')
+async def nigga(ctx):
+    await ctx.channel.send('fuck bitches get money nigga cat nigga cat')
+
+@bot.command(name = 'bruh')
+async def bruh(ctx):
+    s1='bruh'
+    s2='moment'
+    i=1
+    while i<=2:
+        j=1
+        while j<=10:
+            if(j<=5):
+                s=s1+j*3*' '+s2
+            else:
+                s=s1+(10-j)*3*' '+s2
+            await ctx.channel.send(s)
+            j+=1
+        i+=1
+
+
 
 @bot.event
 async def on_ready():
