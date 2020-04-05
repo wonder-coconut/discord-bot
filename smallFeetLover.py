@@ -1,6 +1,7 @@
 import discord
+from discord.ext import commands
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='~')
 
 def getToken():
     tokenFile = open('/home/wondercoconut/python3/botshit/token.txt','r')
@@ -8,20 +9,35 @@ def getToken():
     Token = tokentxt.split('\n')
     return Token[1]
 
-@client.event
+
+@bot.command(name = 'start')
+async def test(ctx):
+    await ctx.channel.send('type in ~getwoke')
+
+@bot.command(name = 'getwoke')
+async def start(ctx):
+    await ctx.channel.send('''press F to pay respects
+    ~getwoke for this message
+    ~nigga for cute poetry aka BARS
+    ~bruh for surprise
+    ~madarchod for haha very nice desi meme
+    ~caps <text>
+    say the word \"idiot\" for a strongly worded copypasta
+    ~gay for the gayest picture you can ever find
+    ~bop for a bop
+    ~wonder for a retarded fuck portrait
+    pigeon for something
+    be horny
+    ~engage to remove the big guns
+    ~art for a personification of the internet
+    nice for a ceaser
+    muda
+    ask him what bear is best
+    what what what what
+    bible time ezekiel boy''')
+
+@bot.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    print('logged in as '+(str(bot.user)))
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('bonjour'):
-        await message.channel.send('guten morgen')
-
-def main():
-    client.run(getToken())
-
-if __name__ == '__main__':
-    main()
+bot.run(getToken())
