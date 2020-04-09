@@ -23,7 +23,7 @@ async def start(ctx):
     #~nigga for cute poetry aka BARS
     #~bruh for surprise
     #~madarchod for haha very nice desi meme
-    ~engage to remove the big guns
+    #~engage to remove the big guns
     ~art for a personification of the internet
     ~bop for a bop
     ~formula for the greatest lego oc ever
@@ -56,6 +56,9 @@ async def bruh(ctx):
 async def madarchod(ctx):
     await ctx.channel.send('mai madarchod hoon jo isme aaya')
 
+@bot.command(name = 'engage')
+async def engage(ctx):
+    await ctx.channel.send('ok boomer')
 @bot.event
 async def on_message(ctx):
     if ctx.author == bot.user:
@@ -68,7 +71,7 @@ async def on_message(ctx):
               try:
                   image=str(ctx.attachments[0])
                   if isImage(image):
-                      await ctx.channel.send('img')
+                      await ctx.channel.send('ok boomer')
                   #await ctx.channel.send(isImage(image))
 
                   attachTest(Ctx.attachments)
