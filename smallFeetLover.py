@@ -19,14 +19,14 @@ async def test(ctx):
 async def start(ctx):
     await ctx.channel.send('''
     press F to pay respects
-    #~getwoke for this message 
-    #~nigga for cute poetry aka BARS
-    #~bruh for surprise
-    #~madarchod for haha very nice desi meme
-    #~engage to remove the big guns
+    ~getwoke for this message 
+    ~nigga for cute poetry aka BARS
+    ~bruh for surprise
+    ~madarchod for haha very nice desi meme
+    ~engage to remove the big guns
     ~art for a personification of the internet
-    ~bop for a bop
-    ~formula for the greatest lego oc ever
+    #~bop for a bop   <not on discord>
+    #~formula for the greatest lego oc ever
 
     dont be shy say hello
 
@@ -59,6 +59,11 @@ async def madarchod(ctx):
 @bot.command(name = 'engage')
 async def engage(ctx):
     await ctx.channel.send('ok boomer')
+
+@bot.command(name = 'art')
+async def art(ctx):
+    await ctx.channel.send(file=discord.File('/home/wondercoconut/Downloads/art.png'))
+
 @bot.event
 async def on_message(ctx):
     if ctx.author == bot.user:
