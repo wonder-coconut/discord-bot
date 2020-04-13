@@ -93,10 +93,10 @@ async def on_message(ctx):
             await ctx.channel.send(copy(1))
         elif word.find('idiot')!= -1:
             await ctx.channel.send(copy(2))
-        elif word.find('peace')!= -1:
-            pass
-        elif word.find('peace')!= -1:
-            pass
+        elif word.find('what')!= -1:
+            await ctx.channel.send(copy(3))
+        elif word.find('bruh')!= -1:
+            await ctx.channel.send(':moyai:')
         else:
               try:
                   image=str(ctx.attachments[0])
