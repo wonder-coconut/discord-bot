@@ -90,8 +90,10 @@ async def on_message(ctx):
         elif word.find('love') !=-1 or word.find('sex') !=-1 or word.find('sexy') !=-1 or word.find('beautiful') !=-1:
             await ctx.channel.send('simp')
         elif word.find('bible')!= -1:
-            pass
+            await ctx.channel.send(copy(1))
         elif word.find('idiot')!= -1:
+            await ctx.channel.send(copy(2))
+        elif word.find('peace')!= -1:
             pass
         elif word.find('peace')!= -1:
             pass
@@ -126,6 +128,11 @@ def pigeonURL():
     s='/home/wondercoconut/python3/botshit/discord_bot/pigeon crap/pigeon'+str(randint(1,32))+'.jpg'
     return s
 
+def copy(i):
+    text = open('/home/wondercoconut/python3/botshit/copy.txt')
+    text = text.read()
+    text = text.split('\n')
+    return text[i-1]
 @bot.event
 async def on_ready():
     print('logged in as '+(str(bot.user)))
