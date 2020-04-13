@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 
+import praw
+import myfootmytutor
+
 from random import seed
 from random import randint
 
@@ -9,6 +12,9 @@ import datetime
 
 bot = commands.Bot(command_prefix='~')
 BOT = discord.Client()
+
+
+
 
 def getToken():
     tokenFile = open('/home/wondercoconut/python3/botshit/token.txt','r')
@@ -45,6 +51,10 @@ async def start(ctx):
     ''')
 
 #commands list 
+
+@bot.command(name = 'guttargoo')
+async def guttargoo(ctx):
+    await ctx.channel.send(myfootmytutor.url())
 
 @bot.command(name = 'nigga')
 async def nigga(ctx):
@@ -137,5 +147,11 @@ def copy(i):
 async def on_ready():
     print('logged in as '+(str(bot.user)))
 
-bot.run(getToken())
+def main():
+
+    
+    bot.run(getToken())
+
+if __name__ == "__main__":
+    main()
 
