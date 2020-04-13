@@ -33,15 +33,13 @@ async def start(ctx):
     ~art for a personification of the internet
     #~bop for a bop   <not on discord>
     ~formula for the greatest lego oc ever
+    ~lego
 
     dont be shy say hello
 
     pigeon for something
     say the word \"idiot\" for a strongly worded copypasta
     be horny
-    nice for a ceaser
-    muda
-    ask him what bear is best
     what what what what
     bible time ezekiel boy
     ''')
@@ -74,6 +72,10 @@ async def art(ctx):
 async def formula(ctx):
     await ctx.channel.send(file=discord.File('/home/wondercoconut/python3/botshit/formula.jpg'))
 
+@bot.command(name = 'lego')
+async def lego(ctx):
+    pass
+
 @bot.event
 async def on_message(ctx):
     if ctx.author == bot.user:
@@ -87,6 +89,12 @@ async def on_message(ctx):
             await ctx.channel.send(file=discord.File(url))
         elif word.find('love') !=-1 or word.find('sex') !=-1 or word.find('sexy') !=-1 or word.find('beautiful') !=-1:
             await ctx.channel.send('simp')
+        elif word.find('bible')!= -1:
+            pass
+        elif word.find('idiot')!= -1:
+            pass
+        elif word.find('peace')!= -1:
+            pass
         else:
               try:
                   image=str(ctx.attachments[0])
