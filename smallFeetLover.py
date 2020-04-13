@@ -85,7 +85,7 @@ async def on_message(ctx):
         elif word.find('pigeon') != -1:
             url = pigeonURL()
             await ctx.channel.send(file=discord.File(url))
-        elif word.find('love') !=-1 or word.find('sex') !=-1 or word.find('sexy') !=-1:
+        elif word.find('love') !=-1 or word.find('sex') !=-1 or word.find('sexy') !=-1 or word.find('beautiful') !=-1:
             await ctx.channel.send('simp')
         else:
               try:
