@@ -1,6 +1,12 @@
 import discord
 from discord.ext import commands
 
+from random import seed
+from random import randint
+
+import datetime
+
+
 bot = commands.Bot(command_prefix='~')
 BOT = discord.Client()
 
@@ -26,7 +32,7 @@ async def start(ctx):
     ~engage to remove the big guns
     ~art for a personification of the internet
     #~bop for a bop   <not on discord>
-    #~formula for the greatest lego oc ever
+    ~formula for the greatest lego oc ever
 
     dont be shy say hello
 
@@ -62,7 +68,11 @@ async def engage(ctx):
 
 @bot.command(name = 'art')
 async def art(ctx):
-    await ctx.channel.send(file=discord.File('/home/wondercoconut/Downloads/art.png'))
+    await ctx.channel.send(file=discord.File('/home/wondercoconut/python3/botshit/art.png'))
+
+@bot.command(name = 'formula')
+async def formula(ctx):
+    await ctx.channel.send(file=discord.File('/home/wondercoconut/python3/botshit/formula.jpg'))
 
 @bot.event
 async def on_message(ctx):
@@ -70,8 +80,11 @@ async def on_message(ctx):
         return
     else:
         word=ctx.content.lower()
-        if word.startswith('hello'):
+        if word.find('hello') != -1:
             await ctx.channel.send('fuck off')
+        elif word.find('pigeon') != -1:
+            url = pigeonURL()
+            await ctx.channel.send(file=discord.File(url))
         else:
               try:
                   image=str(ctx.attachments[0])
@@ -96,16 +109,12 @@ def isImage(image):
 
     return x
 
-
-#        i=0
-#        while(True):
-#            try:
-#                s=word[i].lower()
-#                if(s=='idiot'):
-#                    await ctx.channel.send('idiot')
-#            except:
-#                break
-
+def pigeonURL():
+    time = datetime.datetime.now()
+    microsec = time.microsecond
+    seed(microsec)
+    s='/home/wondercoconut/python3/botshit/discord_bot/pigeon crap/pigeon'+str(randint(1,32))+'.jpg'
+    return s
 
 @bot.event
 async def on_ready():
