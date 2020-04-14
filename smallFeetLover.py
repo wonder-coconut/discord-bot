@@ -52,9 +52,9 @@ async def start(ctx):
 
 #commands list 
 
-@bot.command(name = 'guttargoo')
-async def guttargoo(ctx):
-    await ctx.channel.send(myfootmytutor.url())
+#@bot.command(name = 'guttargoo')
+#async def guttargoo(ctx):
+#    await ctx.channel.send(myfootmytutor.url())
 
 @bot.command(name = 'nigga')
 async def nigga(ctx):
@@ -135,7 +135,7 @@ def pigeonURL():
     time = datetime.datetime.now()
     microsec = time.microsecond
     seed(microsec)
-    s='/home/wondercoconut/python3/botshit/discord_bot/pigeon crap/pigeon'+str(randint(1,32))+'.jpg'
+    s='/home/wondercoconut/python3/botshit/discord_bot/pigeon_crap/pigeon'+str(randint(1,32))+'.jpg'
     return s
 
 def copy(i):
