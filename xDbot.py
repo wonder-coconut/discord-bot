@@ -32,12 +32,12 @@ def xdRandom():
     seed(mic)
     i = randint(1,6)
     if(i!=1):
-        xd =  open('/home/wondercoconut/python3/botshit/discord_bot/xD text/XD2.txt')
+        xd =  open('/home/wondercoconut/python3/botshit/discord_bot/xD_text/XD2.txt')
         xd = xd.read()
         xd = xd.split('\n')
         return xd[i-1]
     elif (i==1):
-        xd =  open('/home/wondercoconut/python3/botshit/discord_bot/xD text/XD1.txt')
+        xd =  open('/home/wondercoconut/python3/botshit/discord_bot/xD_text/XD1.txt')
         xd = xd.read()
         return xd
 
